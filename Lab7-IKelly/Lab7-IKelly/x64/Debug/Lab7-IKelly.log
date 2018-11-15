@@ -1,10 +1,3 @@
 ﻿  Lab7-IKelly.cpp
-c:\users\ikelly\source\repos\lab7-ikelly\lab7-ikelly\lab7-ikelly.h(11): error C2061: syntax error: identifier 'vector'
-c:\users\ikelly\source\repos\lab7-ikelly\lab7-ikelly\lab7-ikelly.cpp(13): error C2511: 'void Sort::bubble(std::vector<double,std::allocator<_Ty>> &)': overloaded member function not found in 'Sort'
-          with
-          [
-              _Ty=double
-          ]
-  c:\users\ikelly\source\repos\lab7-ikelly\lab7-ikelly\lab7-ikelly.h(9): note: see declaration of 'Sort'
-c:\users\ikelly\source\repos\lab7-ikelly\lab7-ikelly\lab7-ikelly.cpp(69): error C2660: 'Sort::bubble': function does not take 1 arguments
-  c:\users\ikelly\source\repos\lab7-ikelly\lab7-ikelly\lab7-ikelly.h(11): note: see declaration of 'Sort::bubble'
+c:\users\ik-ko\desktop\lab7-master\lab7-ikelly\lab7-ikelly\lab7-ikelly.cpp(56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Lab7-IKelly.vcxproj -> C:\Users\ik-ko\Desktop\Lab7-master\Lab7-IKelly\x64\Debug\Lab7-IKelly.exe

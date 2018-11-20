@@ -59,59 +59,31 @@ void mergeSort(vector<double>::iterator begin, vector<double>::iterator end) {
 	}
 };
 
-/*
-void quickSort(vector<double>::iterator begin, vector<double>::iterator end) {
-	if (end - begin > 1)
-	{
-		vector<double>::iterator split = partition(begin + 1, end, bind2nd(order, *begin));
-		iter_swap(begin, split - 1);
-		quickSort(begin, split - 1, order);
-		quickSort(split, end, order);
+// Sorts 70000 in 4s
+void quickSort(vector<double> &A, vector<double>::iterator begin, vector<double>::iterator end) {
+	if (A.size() <= 1)
+		return;
+
+	double pivot = A.at(A.size() / 2);
+
+	vector<double> less;
+	vector<double> equal;
+	vector<double> greater;
+
+	for (vector<double>::iterator i = begin; i != end; i++) {
+		if (*i < pivot)
+			less.push_back(*i);
+		if (*i == pivot)
+			equal.push_back(*i);
+		if (*i > pivot)
+			greater.push_back(*i);
 	}
-};
-*/
-
-void swap(int i, int j, vector<double> split) {
-	double temp = split.at(i);
-	split.at(i) = split.at(j);
-	split.at(j) = temp;
-};
-
-void quickSort(int begin, int end, vector<double> split) {
-	if (end - begin > 1)
-	{
-		int middle = (begin + end) / 2;
-		int i = begin;
-		int j = end;
-
-
-		double pivot = split.at(middle);
-
-		while (begin < j || i < end) {
-			while (split.at(i) < pivot) {
-				i++;
-			}
-			while (split.at(j) > pivot) {
-				j--;
-			}
-			
-			if (i <= j) {
-				swap(i, j, split);
-				i++;
-				j--;
-			}
-			else {
-				if (begin < j) {
-					quickSort(begin, j, split);
-				}
-				if (i < end) {
-					quickSort(i, end, split);
-
-				}
-				return;
-			}
-		}
-	}
+	quickSort(less, less.begin(), less.end());
+	quickSort(greater, greater.begin(), greater.end());
+	A.clear();
+	A.insert(A.end(), less.begin(), less.end());
+	A.insert(A.end(), equal.begin(), equal.end());
+	A.insert(A.end(), greater.begin(), greater.end());
 };
 
 #endif
